@@ -1,4 +1,4 @@
-package controllers.toppage;
+package controllers.employees;
 
 import java.io.IOException;
 import java.util.List;
@@ -48,7 +48,7 @@ public class EmployeeIndexServlet extends HttpServlet {
 	                               .setMaxResults(15)
 	                               .getResultList();
 
-	   long employees_count = (long)em.createNamedQuery("getEmployeesount",Long.class)
+	   long employees_count = (long)em.createNamedQuery("getEmployeesCount",Long.class)
 	                               .getSingleResult();
 
 	   em.close();
