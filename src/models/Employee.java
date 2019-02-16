@@ -60,63 +60,63 @@ public class Employee {
     @Column(name="delete_flag", nullable=false)
     private Integer delete_flag;
 
-    private Integer getId(){
+    public Integer getId(){
         return id;
     }
 
-    private void setId(Integer id){
+    public void setId(Integer id){
         this.id = id;
     }
 
-    private String getCode(){
+    public String getCode(){
         return code;
     }
 
-    private void setCode(String code){
+    public void setCode(String code){
         this.code = code;
     }
 
-    private String getName(){
+    public String getName(){
         return name;
     }
 
-    private void setName(String name){
+    public void setName(String name){
         this.name=name;
     }
 
-    private String getPassword(){
+    public String getPassword(){
         return password;
     }
 
-    private void setPassword(String password){
+    public void setPassword(String password){
         this.password = password;
     }
 
-    private Integer getAdmin_flag(){
+    public Integer getAdmin_flag(){
         return admin_flag;
     }
 
-    private void setAdmin_flag(Integer admin_flag){
+    public void setAdmin_flag(Integer admin_flag){
         this.admin_flag=admin_flag;
     }
 
-    private Timestamp getCreated_at(){
+    public Timestamp getCreated_at(){
         return created_at;
     }
 
-    private void setCreated_at(Timestamp created_at){
+    public void setCreated_at(Timestamp created_at){
         this.created_at=created_at;
     }
 
-    private Timestamp getUpdated_at(){
+    public Timestamp getUpdated_at(){
         return updated_at;
     }
 
-    private void setUpdated_at(Timestamp updated_at){
+    public void setUpdated_at(Timestamp updated_at){
         this.updated_at=updated_at;
     }
 
-    private Integer getDelete_flag(){
+    public Integer getDelete_flag(){
         return delete_flag;
     }
 
