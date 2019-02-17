@@ -9,15 +9,15 @@
 </div>
 </c:if>
 <h2>従業員　一覧</h2>
-<table id = "employee_list"></table>
+<table id = "employee_list">
 <tbody>
 <tr>
 <th>社員番号</th>
 <th>氏名</th>
 <th>操作</th>
 </tr>
-  <c:forEach var="employee" items="${employees}" varStatus="status"> /** varStatus 今のループの状態 */
-<tr class="row${status.count % 2 }">  /** count 今のループのインデックス番号（１から） */
+  <c:forEach var="employee" items="${employees}" varStatus="status">
+<tr class="row${status.count % 2 }">
 <td><c:out value ="${employee.code }" /></td>
 <td><c:out value="${employee.name }" /></td>
 <td>
