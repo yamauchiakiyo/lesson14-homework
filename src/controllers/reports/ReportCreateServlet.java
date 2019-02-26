@@ -43,6 +43,7 @@ public class ReportCreateServlet extends HttpServlet {
 
 	    if(_token != null && _token.equals(request.getSession().getId())){
 	        EntityManager em = DBUtil.createEntityManager();
+
 	        System.out.println(request.getParameter("report_date"));
 
 	        Report r = new Report();

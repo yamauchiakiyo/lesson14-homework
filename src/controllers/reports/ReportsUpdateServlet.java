@@ -44,7 +44,7 @@ public class ReportsUpdateServlet extends HttpServlet {
 	        Report r = em.find(Report.class, (Integer)(request.getSession().getAttribute("report_id")));
 
 	        r.setReport_date(Date.valueOf(request.getParameter("report_date")));
-	        r.setTitle(request.getParameter("content"));
+	        r.setTitle(request.getParameter("title"));
 	        r.setContent(request.getParameter("content"));
 	        r.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 
@@ -64,6 +64,10 @@ public class ReportsUpdateServlet extends HttpServlet {
 	            em.getTransaction().begin();
 	            em.getTransaction().commit();
 	            em.close();
+
+	            request.getSession().setAttribute("flush", "更新が完了しました。");
+
+
 	            request.getSession().removeAttribute("report_id");
 
 	            response.sendRedirect(request.getContextPath() + "/reports/index");
