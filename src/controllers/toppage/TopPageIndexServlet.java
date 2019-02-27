@@ -43,35 +43,35 @@ public class TopPageIndexServlet extends HttpServlet {
 	   int page;
 
 	   try{
-	       page = Integer.parseInt(request.getParameter("page"));
+	       page=Integer.parseInt(request.getParameter("page"));
 
 	    }catch(Exception e){
-	        page = 1;
+	        page=1;
 	    }
 
 	   List<Report>reports = em.createNamedQuery("getMyAllReports",Report.class)
-	                        .setParameter("employee", login_employee)
+	                        .setParameter("employee",login_employee)
 	                        .setFirstResult(15 * (page-1))
 	                        .setMaxResults(15)
 	                        .getResultList();
 
-	   long reports_count = (long)em.createNamedQuery("getMyReportsCount" ,Long.class)
-	                        .setParameter("employee", login_employee)
+	   long reports_count = (long)em.createNamedQuery("getMyReportsCount",Long.class)
+	                        .setParameter("employee",login_employee)
 	                        .getSingleResult();
 
 	   em.close();
 
-	   request.setAttribute("reports", reports);
-	   request.setAttribute("reports_count", reports_count);
-	   request.setAttribute("page", page);
+	   request.setAttribute("reports",reports);
+	   request.setAttribute("reports_count",reports_count);
+	   request.setAttribute("page",page);
 
-	   if(request.getSession().getAttribute("flush") != null){
+	   if(request.getSession().getAttribute("flush")!=null){
 	       request.setAttribute("flush", request.getSession().getAttribute("flush"));
 	       request.getSession().removeAttribute("flush");
 	   }
 
 	   RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/topPage/index.jsp");
-       rd.forward(request, response);
+       rd.forward(request,response);
 
 }
 
